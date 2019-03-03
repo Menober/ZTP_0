@@ -75,7 +75,7 @@ public class BuildingController {
 
     private static void editBuildingByIndex(Village village, int idBuilding) {
         BuildingView.askWhatToEdit();
-        int option = Integer.valueOf(readKeyboard());
+        int option = parseMessageToInt(readKeyboard());
         if (option == 1) {
             insertBuildingName(village.getBuildings().get(idBuilding));
             insertBuildingLevel(village.getBuildings().get(idBuilding));
@@ -126,12 +126,12 @@ public class BuildingController {
 
     private static int insertBuildingIndex() {
         BuildingView.askforBuildingIndex();
-        return Integer.valueOf(readKeyboard());
+        return parseMessageToInt(readKeyboard());
     }
 
     private static int insertVillageID() {
         BuildingView.askforVillageID();
-        return Integer.valueOf(readKeyboard());
+        return parseMessageToInt(readKeyboard());
     }
 
     public static void insertBuildingName(Building building) {
@@ -142,7 +142,15 @@ public class BuildingController {
 
     public static void insertBuildingLevel(Building building) {
         BuildingView.askForBuildingLevel();
-        int level = Integer.valueOf(readKeyboard());
+        int level = parseMessageToInt(readKeyboard());
         building.setLevel(level);
+    }
+    private static int parseMessageToInt(String message){
+        try{
+            int intValue=Integer.valueOf(message);
+            return intValue;
+        }catch (NumberFormatException e){
+            return -1;
+        }
     }
 }

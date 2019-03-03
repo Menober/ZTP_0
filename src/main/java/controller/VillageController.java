@@ -128,7 +128,7 @@ public class VillageController {
 
     private static int askForVillageID() {
         VillageView.deleteVillageID();
-        return Integer.valueOf(readKeyboard());
+        return parseMessageToInt(readKeyboard());
     }
 
     private static Village findVillageByInsertedID() {
@@ -214,8 +214,13 @@ public class VillageController {
             return false;
     }
 
-    private static int parseMessageToInt(String message) {
-        return Integer.valueOf(message);
+    private static int parseMessageToInt(String message){
+        try{
+            int intValue=Integer.valueOf(message);
+            return intValue;
+        }catch (NumberFormatException e){
+            return -1;
+        }
     }
 
 }
