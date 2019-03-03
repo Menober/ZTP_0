@@ -1,0 +1,33 @@
+<Village>
+	<id>1</id>
+	<name>Wrocław</name>
+	<isLeft>false</isLeft>
+	<buildings>
+	    <Building>
+	        <name>Ratusz</name>
+	        <level>2</level>
+	    </Building>
+        <Building>
+            <name>Koszary</name>
+            <level>3</level>
+        </Building>
+	</buildings>
+</Village>
+<Village>
+	<id>2</id>
+	<name>Olsztyn</name>
+	<isLeft>true</isLeft>
+	<buildings>
+	    <Building>
+            <name>Koszary</name>
+            <level>3</level>
+        </Building>
+	</buildings>
+</Village>
+<Village>
+	<id>3</id>
+	<name>Zywiec</name>
+	<isLeft>false</isLeft>
+	<buildings>
+	</buildings>
+</Village>
